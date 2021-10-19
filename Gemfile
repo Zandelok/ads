@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
+ruby '2.6.6'
 
+gem 'activeadmin'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap'
 gem 'jbuilder', '~> 2.7'
@@ -23,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
