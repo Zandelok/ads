@@ -1,0 +1,14 @@
+p
+  strong Name:
+  = @user.name
+p
+  strong Surname:
+  = @user.surname
+p
+  strong Email:
+  = @user.email
+p
+  strong Description:
+  = @user.description
+
+= link_to 'Delete User', @user, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' }
