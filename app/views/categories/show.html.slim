@@ -1,1 +1,9 @@
 h1 = @category.name
+
+table
+  - @category.posts.each do |post|
+    tr
+      td
+        = link_to "#{post.title}", post_path(post), class: 'btn btn-sm btn-info'
+
+= link_to 'Back', :root, class: 'btn btn-sm btn-primary'
