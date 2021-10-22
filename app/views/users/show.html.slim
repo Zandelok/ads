@@ -11,4 +11,10 @@ p
   strong Description:
   = @user.description
 
+table
+  - @user.posts.each do |post|
+    tr
+      td
+        = link_to "#{post.title}", user_post_path(post), class: 'btn btn-sm btn-info'
+
 = link_to 'Delete User', @user, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' }

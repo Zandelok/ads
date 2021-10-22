@@ -14,6 +14,6 @@ p
   strong Image: 
   = @post.image_url
 
-= link_to 'Delete Post', @post, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' }
+= link_to 'Delete Post', user_post_path(@post), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' }
 '
 = link_to 'Back', :back, class: 'btn btn-sm btn-primary'
