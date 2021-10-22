@@ -4,6 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  image_url   :string
+#  state       :string
 #  text        :string           not null
 #  title       :string           not null
 #  category_id :bigint
@@ -15,8 +16,39 @@
 #  index_posts_on_user_id      (user_id)
 #
 class Post < ApplicationRecord
+  include AASM
+
   belongs_to :user
   belongs_to :category
 
   validates_presence_of :title, :text
+
+  aasm do
+    state :draft, initial: true
+    state :submitted
+    state :approved
+    state :declined
+    state :published
+    state :archived
+
+    event :submit do
+      transitions from: :draft, to: :submitted
+    end
+
+    event :approve do
+      transitions from: :submitted, to: :approved
+    end
+
+    event :decline do
+      transitions from: :submitted, to: :declined
+    end
+
+    event :publish do
+      transitions from: :approved, to: :published
+    end
+
+    event :archive do
+      transitions from: [:declined, :published], to: :archived
+    end
+  end
 end
