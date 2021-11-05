@@ -1,9 +1,10 @@
 class UsersController < Devise::RegistrationsController
-  before_action :configure_permitted_parameters, only: [:create]
+  load_and_authorize_resource
 
-  def show
-    @user = User.find(params[:id])
-  end
+  before_action :configure_permitted_parameters, only: [:create]
+  before_action :find_user, only: %i[show destroy change_role]
+
+  def show; end
 
   def create
     @user = User.create(user_params)
@@ -14,7 +15,21 @@ class UsersController < Devise::RegistrationsController
     redirect_to :root
   end
 
+  def make_admin
+    @user.assign_admin_role
+    redirect_to admin_users_path
+  end
+
+  def make_user
+    @user.assign_user_role
+    redirect_to admin_users_path
+  end
+
   private
+
+  def find_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :surname)

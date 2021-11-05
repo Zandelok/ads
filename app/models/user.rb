@@ -29,7 +29,7 @@
 #  fk_rails_...  (role_id => roles.id)
 #
 class User < ApplicationRecord
-  has_one :role
+  belongs_to :role
   has_many :posts
   before_validation :assign_role
 
@@ -42,11 +42,22 @@ class User < ApplicationRecord
          :trackable,
          :validatable
 
-  protected
+  def assign_admin_role
+    role_to_asign = Role.find_by!(name: 'admin')
+    self.role = role_to_asign
+    save
+  end
+
+  def assign_user_role
+    role_to_asign = Role.find_by!(name: 'user')
+    self.role = role_to_asign
+    save
+  end
+
+  private
 
   def assign_role
-    return unless role.nil?
-
-    role_id = Role.find_by!(role: 'user').id
+    return unless self.role.nil?
+    self.role = Role.find_by!(name: 'user')
   end
 end

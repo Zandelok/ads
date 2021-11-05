@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_10_25_101809) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string "role", null: false
+    t.string "name", null: false
   end
 
   create_table "users", force: :cascade do |t|
