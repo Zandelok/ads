@@ -15,7 +15,7 @@ class Ability
         can %i[read destroy make_admin make_user], User
         can :manage, User, id: user.id
         can :manage, Role
-        can %i[read destroy approve_post decline_post], Post
+        can %i[read destroy approve_post decline_post change_mind], Post
         can :read, ActiveAdmin::Page, name: 'Dashboard', namespace_name: 'admin'
       when 'user'
         can :read, Category

@@ -3,6 +3,7 @@
 # Table name: posts
 #
 #  id          :bigint           not null, primary key
+#  comment     :string
 #  image_url   :string
 #  state       :string
 #  text        :string           not null
@@ -41,6 +42,10 @@ class Post < ApplicationRecord
 
     event :decline do
       transitions from: :submitted, to: :declined
+    end
+
+    event :change do
+      transitions from: [:declined, :approved], to: :submitted
     end
 
     event :publish do

@@ -7,9 +7,14 @@ p
 p
   strong Title: 
   = @post.title
-p
-  strong State:
-  = @post.state
+- if can? :update, @post
+  p
+    strong State:
+    = @post.state
+  - if @post.state == 'declined'
+    p
+      strong Reason:
+      = @post.comment
 p
   strong Text: 
   = @post.text

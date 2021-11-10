@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :find_post, only: %i[show edit update destroy submit_post approve_post decline_post publish_post archive_post]
+  before_action :find_post, only: %i[show edit update destroy submit_post undo_submit approve_post decline_post change_mind publish_post archive_post]
 
   def show; end
 
@@ -50,7 +50,14 @@ class PostsController < ApplicationController
   end
 
   def decline_post
+    @post.comment = 'Incorrectly composed publication'
     @post.decline!
+    redirect_to admin_posts_path
+  end
+
+  def change_mind
+    @post.comment = nil
+    @post.change!
     redirect_to admin_posts_path
   end
 
@@ -69,6 +76,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :text, :image_url, :category_id, :user_id)
+    params.require(:post).permit(:title, :text, :image_url, :comment, :category_id, :user_id)
   end
 end

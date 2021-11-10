@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/users/:id/make_user', to: 'users#make_user', as: 'make_admin_an_user'
     get '/posts/:id/approve_post', to: 'posts#approve_post', as: 'approve_post'
     get '/posts/:id/decline_post', to: 'posts#decline_post', as: 'decline_post'
+    get '/posts/:id/change_mind', to: 'posts#change_mind', as: 'change_mind'
   end
 
   devise_for :users
