@@ -3,10 +3,18 @@ p
   = @post.category.name
 p
   strong Author: 
-  = "#{@post.user.name} #{@post.user.surname}"
+  = link_to "#{@post.user.name} #{@post.user.surname}", user_path(@post.user_id)
 p
   strong Title: 
   = @post.title
+- if can? :update, @post
+  p
+    strong State:
+    = @post.state
+  - if @post.state == 'declined'
+    p
+      strong Reason:
+      = @post.comment
 p
   strong Text: 
   = @post.text
@@ -14,6 +22,15 @@ p
   strong Image: 
   = @post.image_url
 
-= link_to 'Delete Post', user_post_path(@post), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' }
-'
+- if @post.state == 'draft'
+  - if can? :update, @post
+    = link_to 'Edit', edit_user_post_path(@post.user_id, @post), class: 'btn btn-sm btn-success'
+  - if can? :submit_post, @post
+    = link_to 'Ask to Publish', user_submit_post_path, class: 'btn btn-sm btn-success'
+- if @post.state == 'submitted'
+  - if can? :undo_submit, @post
+    = link_to 'Undo Request', user_undo_submit_path, class: 'btn btn-sm btn-success'
+- if can? :destroy, @post
+  = link_to 'Delete Post', user_post_path(@post), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' }
+
 = link_to 'Back', :back, class: 'btn btn-sm btn-primary'

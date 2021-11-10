@@ -10,11 +10,17 @@ AllCops:
     - 'Gemfile'
 Layout/LineLength:
   Max: 120
+Layout/MultilineOperationIndentation:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Style/StringConcatenation:
+  Enabled: false
 Naming/InclusiveLanguage:
+  Enabled: false
+Lint/DuplicateBranch:
   Enabled: false
 Metrics/BlockLength:
   Exclude:

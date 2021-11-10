@@ -3,6 +3,7 @@
 # Table name: posts
 #
 #  id          :bigint           not null, primary key
+#  comment     :string
 #  image_url   :string
 #  state       :string
 #  text        :string           not null
@@ -23,16 +24,16 @@ class Post < ApplicationRecord
 
   validates_presence_of :title, :text
 
-  aasm do
+  aasm column: :state do
     state :draft, initial: true
-    state :submitted
-    state :approved
-    state :declined
-    state :published
-    state :archived
+    state :submitted, :approved, :declined, :published, :archived
 
     event :submit do
       transitions from: :draft, to: :submitted
+    end
+
+    event :undo do
+      transitions from: :submitted, to: :draft
     end
 
     event :approve do
@@ -41,6 +42,10 @@ class Post < ApplicationRecord
 
     event :decline do
       transitions from: :submitted, to: :declined
+    end
+
+    event :change do
+      transitions from: [:declined, :approved], to: :submitted
     end
 
     event :publish do

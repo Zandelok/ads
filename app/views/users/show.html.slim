@@ -15,6 +15,12 @@ table
   - @user.posts.each do |post|
     tr
       td
-        = link_to "#{post.title}", user_post_path(post), class: 'btn btn-sm btn-info'
+        = link_to "#{post.title}", user_post_path(post.user_id, post), class: 'btn btn-sm btn-info'
 
-= link_to 'Delete User', @user, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' }
+- if can? :update, @user
+  = link_to 'Edit', edit_user_path, class: 'btn btn-sm btn-success'
+  '
+  = link_to 'Log Out', destroy_user_session_path, class: 'btn btn-sm btn-warning', method: :delete
+- if can? :destroy, @user
+  = link_to 'Delete User', @user, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' }
+= link_to 'Back', :back, class: 'btn btn-sm btn-primary'
