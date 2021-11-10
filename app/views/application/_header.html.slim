@@ -1,0 +1,31 @@
+= stylesheet_link_tag 'header'
+
+.header
+  .container
+    .row
+      .col-md-1
+        .logo
+          h1 Articles
+      - if user_signed_in?
+        - if current_user.role.name == 'admin'
+          .col-md-7
+          .col-md-1
+            = link_to 'Home', root_path, class: 'btn btn-sm btn-info'
+          .col-md-1
+            = link_to 'Profile', user_path(current_user.id), class: 'btn btn-sm btn-info'
+          .col-md-1
+            = link_to 'Dashboard', admin_dashboard_path, class: 'btn btn-sm btn-info'
+        - else
+          .col-md-7
+          .col-md-1
+            = link_to 'Home', root_path, class: 'btn btn-sm btn-info'
+          .col-md-1
+            = link_to 'Profile', user_path(current_user.id), class: 'btn btn-sm btn-info'
+          .col-md-1
+            = link_to 'New Post', new_user_post_path(current_user.id), class: 'btn btn-sm btn-info'
+      - else
+        .col-md-9
+        .col-md-1
+          = link_to 'Home', root_path, class: 'btn btn-sm btn-info'
+        .col-md-1
+          = link_to 'Sign up', user_session_path, class: 'btn btn-sm btn-info'
