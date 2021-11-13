@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :find_post, only: %i[show edit update destroy submit_post undo_submit approve_post decline_post change_mind publish_post archive_post]
+  before_action :find_post, only: %i[show edit update destroy submit_post undo_submit approve_post decline_post change_mind]
 
   def show; end
 
@@ -59,14 +59,6 @@ class PostsController < ApplicationController
     @post.comment = nil
     @post.change!
     redirect_to admin_posts_path
-  end
-
-  def publish_post
-    @post.publish!
-  end
-
-  def archive_post
-    @post.archive!
   end
 
   private

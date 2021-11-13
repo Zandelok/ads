@@ -6,7 +6,7 @@ class Ability
   def initialize(user)
     if user.nil?
       can :read, Category
-      can :read, Post
+      can :read, Post, state: 'published'
       can :read, User
     else
       case user.role.name
@@ -19,9 +19,9 @@ class Ability
         can :read, ActiveAdmin::Page, name: 'Dashboard', namespace_name: 'admin'
       when 'user'
         can :read, Category
-        can :read, Post
+        can :read, Post, state: 'published'
         can :read, User
-        can %i[create update destroy submit_post undo_submit], Post, user_id: user.id
+        can %i[read create update destroy submit_post undo_submit], Post, user_id: user.id
         can %i[read destroy update], User, id: user.id
       end
     end

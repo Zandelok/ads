@@ -1,21 +1,28 @@
 p
-  strong Name:
+  strong Name: 
   = @user.name
 p
-  strong Surname:
+  strong Surname: 
   = @user.surname
 p
-  strong Email:
+  strong Email: 
   = @user.email
 p
-  strong Description:
+  strong Description: 
   = @user.description
 
-table
-  - @user.posts.each do |post|
-    tr
-      td
-        = link_to "#{post.title}", user_post_path(post.user_id, post), class: 'btn btn-sm btn-info'
+- if can? :update, @user
+  table
+    - @user.posts.each do |post|
+      tr
+        td
+          = link_to "#{post.title}", user_post_path(post.user_id, post), class: 'btn btn-sm btn-info'
+- else
+  table
+    - @user.posts.select{ |post| post.state == 'published' }.each do |post|
+      tr
+        td
+          = link_to "#{post.title}", user_post_path(post.user_id, post), class: 'btn btn-sm btn-info'
 
 - if can? :update, @user
   = link_to 'Edit', edit_user_path, class: 'btn btn-sm btn-success'
