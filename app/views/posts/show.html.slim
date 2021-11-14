@@ -9,7 +9,7 @@ p
   = @post.title
 - if can? :update, @post
   p
-    strong State:
+    strong State: 
     = @post.state
   - if @post.state == 'declined'
     p

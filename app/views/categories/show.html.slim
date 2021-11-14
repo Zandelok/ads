@@ -1,7 +1,7 @@
 h1 = @category.name
 
 table
-  - @category.posts.each do |post|
+  - @category.posts.select{ |post| post.state == 'published' }.each do |post|
     tr
       td
         = link_to "#{post.title}", user_post_path(post.user_id, post), class: 'btn btn-sm btn-info'

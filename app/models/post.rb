@@ -56,4 +56,12 @@ class Post < ApplicationRecord
       transitions from: [:declined, :published], to: :archived
     end
   end
+
+  def publish_post
+    self.publish!
+  end
+
+  def archive_post
+    self.archive!
+  end
 end
