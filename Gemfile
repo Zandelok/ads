@@ -17,6 +17,7 @@ gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'rubocop-rspec'
 gem 'sass-rails', '>= 6'
 gem 'scss_lint', require: false
 gem 'slim'
@@ -27,6 +28,11 @@ gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
 end
 
 group :development do
