@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get '/users/sign_in', to: 'devise/sessions#new'
     get '/users/sign_out', to: 'devise/sessions#destroy'
     get '/users/:id', to: 'users#show', as: 'user'
+    delete '/users/:id/destroy', to: 'users#destroy', as: 'destroy_user'
     get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
     get '/users/:id/make_admin', to: 'users#make_admin', as: 'make_user_an_admin'
     get '/users/:id/make_user', to: 'users#make_user', as: 'make_admin_an_user'

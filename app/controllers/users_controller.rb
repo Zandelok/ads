@@ -1,14 +1,9 @@
 class UsersController < Devise::RegistrationsController
   load_and_authorize_resource
 
-  before_action :configure_permitted_parameters, only: [:create]
-  before_action :find_user, only: %i[show destroy change_role]
+  before_action :find_user, only: %i[show make_admin make_user destroy change_role]
 
   def show; end
-
-  def create
-    @user = User.create(user_params)
-  end
 
   def destroy
     @user.destroy
@@ -29,15 +24,5 @@ class UsersController < Devise::RegistrationsController
 
   def find_user
     @user = User.find(params[:id])
-  end
-
-  def user_params
-    params.require(:user).permit(:name, :surname)
-  end
-
-  protected
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :surname])
   end
 end

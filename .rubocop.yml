@@ -9,14 +9,18 @@ AllCops:
     - 'vendor/**/*'
     - 'Gemfile'
 Layout/LineLength:
-  Max: 120
+  Max: 200
 Layout/MultilineOperationIndentation:
+  Enabled: false
+Layout/EmptyLineAfterGuardClause:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/Documentation:
   Enabled: false
 Style/StringConcatenation:
+  Enabled: false
+Style/RedundantSelf:
   Enabled: false
 Naming/InclusiveLanguage:
   Enabled: false
@@ -26,3 +30,7 @@ Metrics/BlockLength:
   Exclude:
     - lib/**/*
     - 'spec/**/*'
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
