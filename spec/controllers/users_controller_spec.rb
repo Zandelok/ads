@@ -21,7 +21,7 @@ RSpec.describe UsersController, type: :controller do
 
     it 'delete user' do
       delete :destroy, params: { id: cur_user.id }
-      expect(response).to redirect_to('/users/sign_in')
+      expect(response).to redirect_to('/')
     end
   end
 
