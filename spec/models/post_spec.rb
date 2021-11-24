@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id          :bigint           not null, primary key
+#  comment     :string
+#  image_url   :string
+#  state       :string
+#  text        :string           not null
+#  title       :string           not null
+#  category_id :bigint
+#  user_id     :bigint
+#
+# Indexes
+#
+#  index_posts_on_category_id  (category_id)
+#  index_posts_on_user_id      (user_id)
+#
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do

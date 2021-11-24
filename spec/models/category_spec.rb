@@ -1,3 +1,10 @@
+# == Schema Information
+#
+# Table name: categories
+#
+#  id   :bigint           not null, primary key
+#  name :string           not null
+#
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do

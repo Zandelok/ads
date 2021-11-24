@@ -1,24 +1,23 @@
-# README
+# ADS PROJECT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Internet portal with advertising publications. If you aren't registered, you can only see published publications. To create a publication, you should register or log into an existing account.
 
-Things you may want to cover:
+[![Build Status](https://app.circleci.com/pipelines/github/Zandelok/ads?branch=master)](https://app.circleci.com/pipelines/github/Zandelok/ads)
 
-* Ruby version
+## _Specifications_
 
-* System dependencies
+* **Ruby version: 2.6.6**
+* **Rails version: 6.0.3**
+* **Database Management System: PostgreSQL**
 
-* Configuration
+## _Used Gems_
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* **[Twitter Bootstrap](http://twitter.github.com/bootstrap) - great UI boilerplate for modern web apps**
+* **[Annotate](https://github.com/ctran/annotate_models) - for models annotation**
+* **[Active Admin](https://github.com/activeadmin/activeadmin) - for creating elegant backends for website administration.**
+* **[Kaminari](https://github.com/kaminari/kaminari) - for pagination**
+* **[RSpec](https://github.com/rspec/rspec-rails) - for testing code**
+* **[Simplecov](https://github.com/simplecov-ruby/simplecov) - code coverage analysis tool for Ruby**
+* **[Devise](https://github.com/heartcombo/devise) - for authentication**
+* **[Cancancan](https://github.com/CanCanCommunity/cancancan) - for authorization**
+* **[Whenever](https://github.com/javan/whenever) - for rake tasks**
