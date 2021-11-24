@@ -402,6 +402,13 @@
       },
       "/home/kirill/projects/ads/spec/models/category_spec.rb": {
         "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
           1,
@@ -423,6 +430,24 @@
       },
       "/home/kirill/projects/ads/spec/models/post_spec.rb": {
         "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
           1,
@@ -540,6 +565,13 @@
       },
       "/home/kirill/projects/ads/spec/models/role_spec.rb": {
         "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
           1,
@@ -561,6 +593,36 @@
       },
       "/home/kirill/projects/ads/spec/models/user_spec.rb": {
         "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
           1,
@@ -664,6 +726,6 @@
         ]
       }
     },
-    "timestamp": 1637214419
+    "timestamp": 1637755374
   }
 }
