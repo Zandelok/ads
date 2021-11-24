@@ -45,7 +45,7 @@ class Post < ApplicationRecord
     end
 
     event :change do
-      transitions from: [:declined, :approved], to: :submitted
+      transitions from: %i[declined approved], to: :submitted
     end
 
     event :publish do
@@ -53,7 +53,7 @@ class Post < ApplicationRecord
     end
 
     event :archive do
-      transitions from: [:declined, :published], to: :archived
+      transitions from: %i[declined published], to: :archived
     end
   end
 
