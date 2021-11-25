@@ -9,6 +9,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap'
 gem 'cancancan'
 gem 'devise'
+gem 'dotenv-rails', groups: %i[development test]
+gem 'execjs'
 gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
 gem 'kaminari'

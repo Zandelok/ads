@@ -12,7 +12,7 @@ Internet portal with advertising publications. If you aren't registered, you can
 
 ## _Used Gems_
 
-* **[Twitter Bootstrap](http://twitter.github.com/bootstrap) - great UI boilerplate for modern web apps**
+* **[Bootstrap](https://github.com/twbs/bootstrap-rubygem) - great UI boilerplate for modern web apps**
 * **[Annotate](https://github.com/ctran/annotate_models) - for models annotation**
 * **[Active Admin](https://github.com/activeadmin/activeadmin) - for creating elegant backends for website administration.**
 * **[Kaminari](https://github.com/kaminari/kaminari) - for pagination**

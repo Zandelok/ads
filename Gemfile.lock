@@ -111,6 +111,10 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
     docile (1.4.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     factory_bot (6.2.0)
@@ -363,6 +367,8 @@ DEPENDENCIES
   cancancan
   capybara (>= 2.15)
   devise
+  dotenv-rails
+  execjs
   factory_bot_rails
   faker
   jbuilder (~> 2.7)

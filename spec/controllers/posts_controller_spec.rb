@@ -58,7 +58,7 @@ RSpec.describe PostsController, type: :controller do
     before { allow_any_instance_of(CanCan::ControllerResource).to receive(:load_and_authorize_resource) { nil } }
 
     it 'updates the requested post' do
-      put :update, params: { user_id: post.user_id, id: post.id, post: { title: 'brbrbr'} }
+      put :update, params: { user_id: post.user_id, id: post.id, post: { title: 'brbrbr' } }
       expect(response).to have_http_status(:found)
     end
 
