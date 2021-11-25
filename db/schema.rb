@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_11_05_164330) do
   create_table "posts", force: :cascade do |t|
     t.string "title", null: false
     t.string "text", null: false
-    t.string "image_url"
+    t.json "images"
     t.bigint "user_id"
     t.bigint "category_id"
     t.string "state"

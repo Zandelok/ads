@@ -1,4 +1,4 @@
-= form_with(model: [:user, post], local: true) do |f|
+= form_with(model: [:user, post], local: true, html: { multipart: true }) do |f|
   .form-group
     = f.label :category
     = f.collection_select :category_id, Category.all, :id, :name
@@ -9,8 +9,10 @@
     = f.label :text
     = f.text_field :text, rows: 10, cols: 60
   .form-group
-    = f.label :image_url
-    = f.text_field :image_url
+    = f.label :images
+    = f.file_field :images, multiple: true
+  .form-group
+    = f.label :remove_images
+    = f.check_box :remove_images
   .form-group
     = f.submit 'Submit', class: 'btn btn-success'
-  
