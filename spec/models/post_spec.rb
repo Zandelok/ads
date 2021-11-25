@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  comment     :string
-#  image_url   :string
+#  images      :json
 #  state       :string
 #  text        :string           not null
 #  title       :string           not null

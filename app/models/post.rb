@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  comment     :string
-#  image_url   :string
+#  images      :json
 #  state       :string
 #  text        :string           not null
 #  title       :string           not null
@@ -23,6 +23,7 @@ class Post < ApplicationRecord
   belongs_to :category
 
   validates_presence_of :title, :text
+  mount_uploaders :images, ImageUploader
 
   aasm column: :state do
     state :draft, initial: true

@@ -12,6 +12,7 @@ p
   = @user.description
 
 - if can? :update, @user
+  = link_to 'Create Post', new_user_post_path(@user.id), class: 'btn btn-sm btn-success'
   table
     - @user.posts.each do |post|
       tr

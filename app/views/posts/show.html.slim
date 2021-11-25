@@ -19,8 +19,14 @@ p
   strong Text: 
   = @post.text
 p
-  strong Image: 
-  = @post.image_url
+  strong Images: 
+  br
+  table
+    - @post.images.each do |img|
+      tr
+        td
+          = image_tag(img.url.to_s)
+
 
 - if @post.state == 'draft'
   - if can? :update, @post
