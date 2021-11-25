@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-11-25T10:05:08+03:00">2021-11-25T10:05:08+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-11-25T15:15:25+03:00">2021-11-25T15:15:25+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1480,7 +1480,7 @@
 
             
 
-            <code class="ruby">    params.require(:post).permit(:title, :text, :image_url, :comment, :category_id, :user_id)</code>
+            <code class="ruby">    params.require(:post).permit(:title, :text, { images: [] }, :remove_images, :comment, :category_id, :user_id)</code>
           </li>
         </div>
       
@@ -5360,7 +5360,7 @@
 
             
 
-            <code class="ruby">#  image_url   :string</code>
+            <code class="ruby">#  images      :json</code>
           </li>
         </div>
       
