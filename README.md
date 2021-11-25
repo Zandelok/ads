@@ -21,3 +21,4 @@ Internet portal with advertising publications. If you aren't registered, you can
 * **[Devise](https://github.com/heartcombo/devise) - for authentication**
 * **[Cancancan](https://github.com/CanCanCommunity/cancancan) - for authorization**
 * **[Whenever](https://github.com/javan/whenever) - for rake tasks**
+* **[Carrierwave](https://github.com/carrierwaveuploader/carrierwave) - for images**
